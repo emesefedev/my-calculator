@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
         selectOperation(OPERATION.addition)
     })
     subtractButton.addEventListener("click", () => {
-        selectOperation(OPERATION.subraction)
+        selectSubtractOperation()
     })
     multiplyButton.addEventListener("click", () => {
         selectOperation(OPERATION.multiplication)
@@ -30,15 +30,7 @@ window.addEventListener("load", () => {
         selectOperation(OPERATION.division)
     })
     equalButton.addEventListener("click", () => {
-        getOperationValues()
-        const result = operate(a, b, operation)
-
-        if (result == null) {
-            displayError()
-        }
-        else {
-            displayResult(result)
-        }
+        getResult()
     })
 
     clearButton.addEventListener("click", () => clear())
@@ -56,6 +48,28 @@ let operationText = null
 let a = null
 let b = null
 let operation = null
+let resultShowed = false
+
+function getResult() {
+    const input = operationText.textContent.split(" ")
+    if (!isValidInput(input)) {
+        displayError()
+        return
+    }
+
+    setOperandValues({
+        operand1: input[0],
+        operand2: input[2]
+    })
+
+    const result = operate(a, b, operation)
+    if (result == null) {
+        displayError()
+        return
+    }
+
+    displayResult(result)
+}
 
 function clear() {
     a = null
@@ -64,29 +78,30 @@ function clear() {
     clearText()
 }
 
+function isNotEmpty(str) {
+    return str !== ""
+}
+
 function displayError() {
     clearText()
     updateText("ERROR")
+    resultShowed = true
 }
 
 function displayResult(result) {
     clearText()
     updateText(result.toString())
+    resultShowed = true
 }
 
-function getOperationValues() {
-    const operatorsRegex = /[\+\-\*\/]/;
-    const values = operationText.textContent.split(operatorsRegex)
+function isValidInput(input) {
+    const values = input
+    return values.length === 3 && values.every(isNotEmpty)
+}
 
-    console.log(values[0])
-
-    if (values.length !== 2) {
-        displayError()
-    }
-    else {
-        a = +values[0]
-        b = +values[1]
-    }
+function setOperandValues({operand1, operand2}) { 
+    a = +operand1
+    b = +operand2
 }
 
 function selectDigit(digit) {
@@ -95,7 +110,21 @@ function selectDigit(digit) {
 
 function selectOperation(selectedOperation) {    
     operation = selectedOperation
-    updateText(operation)
+    updateText(` ${operation} `)
+}
+
+function selectSubtractOperation() {
+    if (operation != null) {
+        updateText(OPERATION.subraction)
+        return
+    }
+    
+    if (operationText.textContent === "") {
+        updateText(OPERATION.subraction)
+        return 
+    }
+    
+    selectOperation(OPERATION.subraction)
 }
 
 function clearText() {
@@ -103,6 +132,11 @@ function clearText() {
 }
 
 function updateText(newText) {
+    if (resultShowed) {
+        resultShowed = false
+        clearText()
+    }
+
     operationText.textContent += newText
 }
 
