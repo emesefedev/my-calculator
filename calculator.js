@@ -62,7 +62,11 @@ function getResult() {
         return
     }
 
-    displayResult(result)
+    displayResult(round(result))
+}
+
+function round(number) {
+    return Math.round(number * 100) / 100
 }
 
 function clear() {
