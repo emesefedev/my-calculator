@@ -1,3 +1,7 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
 button {
     width: 50px;
     height: 50px;
@@ -7,16 +11,47 @@ button {
     display: flex;
 }
 
-.flex-grid {
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
     flex-wrap: wrap;
+}
+
+.flex-grid {
     width: 170px;
     row-gap: 10px;
 }
 
 .flex-item {
-    flex: 2
+    flex: 1
 }
 
 .justify-space-between {
     justify-content: space-between;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.w-230 {
+    width: 230px;
+}
+
+#operation-text {
+    width: 210px;
+    height: 40px;
+
+    line-height: 40px;
+
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.px-10 {
+    padding-left: 10px;
+    padding-right: 10px;
 }

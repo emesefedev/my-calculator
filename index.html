@@ -9,24 +9,32 @@
     <body>
         <h1>Calculator 🤓</h1>
 
-        <div class="flex-container flex-grid justify-space-between">
-            <button> 1 </button>
-            <button> 2 </button>
-            <button> 3 </button>
-            <button> 4 </button>
-            <button> 5 </button>
-            <button> 6 </button>
-            <button> 7 </button>
-            <button> 8 </button>
-            <button> 9 </button>
-            <button class="flex-item"> 0 </button>
-        </div>
+        <p id="operation-text" class="px-10">Operation</p>
 
-        <div>
-            <button> + </button>
-            <button> - </button>
-            <button> * </button>
-            <button> / </button>
+        <div class="flex-container gap-10 flex-wrap w-230">
+            <div class="flex-container flex-wrap flex-grid justify-space-between gap-10">
+                <button class="number-button">1</button>
+                <button class="number-button">2</button>
+                <button class="number-button">3</button>
+                <button class="number-button">4</button>
+                <button class="number-button">5</button>
+                <button class="number-button">6</button>
+                <button class="number-button">7</button>
+                <button class="number-button">8</button>
+                <button class="number-button">9</button>
+                <button class="flex-item number-button"> 0 </button>
+                <button id="clear-button"> C </button>
+            </div>
+
+            <div class="flex-container flex-column gap-10">
+                <button id="add-button" > + </button>
+                <button id="subract-button" > - </button>
+                <button id="multiply-button" > * </button>
+                <button id="divide-button" > / </button>
+            </div>
+            <button id="equal-button" class="flex-item"> = </button>
         </div>
+        
+    
     </body>
 </html>
