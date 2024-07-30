@@ -44,9 +44,6 @@ const OPERATION = {
 }
 
 let operationText = null
-
-let a = null
-let b = null
 let operation = null
 let resultShowed = false
 
@@ -57,12 +54,7 @@ function getResult() {
         return
     }
 
-    setOperandValues({
-        operand1: input[0],
-        operand2: input[2]
-    })
-
-    const result = operate(a, b, operation)
+    const result = operate(+input[0], +input[2], input[1])
     if (result == null) {
         displayError()
         return
@@ -72,8 +64,6 @@ function getResult() {
 }
 
 function clear() {
-    a = null
-    b = null
     operation = null
     clearText()
 }
@@ -99,18 +89,12 @@ function isValidInput(input) {
     return values.length === 3 && values.every(isNotEmpty)
 }
 
-function setOperandValues({operand1, operand2}) { 
-    a = +operand1
-    b = +operand2
-}
-
 function selectDigit(digit) {
     updateText(digit)
 }
 
-function selectOperation(selectedOperation) {    
-    operation = selectedOperation
-    updateText(` ${operation} `)
+function selectOperation(symbol) {    
+    updateText(` ${symbol} `)
 }
 
 function selectSubtractOperation() {
