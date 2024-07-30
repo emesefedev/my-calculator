@@ -7,34 +7,35 @@
         <script src="calculator.js"></script>
     </head>
     <body>
-        <h1 class="title-color">Calculator 🤓</h1>
+        <h1 class="title-text">Calculator 🤓</h1>
 
-        <p id="operation-text" class="px-10">Operation</p>
+        <div class="w-250 flex-container flex-column align-center px-10 py-10 calculator">
+            <p id="operation-text" class="px-10">Operation</p>
 
-        <div class="flex-container gap-10 flex-wrap w-230">
-            <div class="flex-container flex-wrap flex-grid justify-space-between gap-10">
-                <button class="number-button">1</button>
-                <button class="number-button">2</button>
-                <button class="number-button">3</button>
-                <button class="number-button">4</button>
-                <button class="number-button">5</button>
-                <button class="number-button">6</button>
-                <button class="number-button">7</button>
-                <button class="number-button">8</button>
-                <button class="number-button">9</button>
-                <button class="flex-item number-button"> 0 </button>
-                <button id="clear-button"> C </button>
+            <div class="flex-container gap-10 flex-wrap w-230">
+                <div class="flex-container flex-wrap flex-grid justify-space-between gap-10">
+                    <button class="number-button">1</button>
+                    <button class="number-button">2</button>
+                    <button class="number-button">3</button>
+                    <button class="number-button">4</button>
+                    <button class="number-button">5</button>
+                    <button class="number-button">6</button>
+                    <button class="number-button">7</button>
+                    <button class="number-button">8</button>
+                    <button class="number-button">9</button>
+                    <button class="flex-item number-button"> 0 </button>
+                    <button id="clear-button"> C </button>
+                </div>
+
+                <div class="flex-container flex-column gap-10">
+                    <button id="add-button" > + </button>
+                    <button id="subract-button" > - </button>
+                    <button id="multiply-button" > * </button>
+                    <button id="divide-button" > / </button>
+                </div>
+                <button id="equal-button" class="flex-item"> = </button>
             </div>
-
-            <div class="flex-container flex-column gap-10">
-                <button id="add-button" > + </button>
-                <button id="subract-button" > - </button>
-                <button id="multiply-button" > * </button>
-                <button id="divide-button" > / </button>
-            </div>
-            <button id="equal-button" class="flex-item"> = </button>
         </div>
-        
     
     </body>
 </html>

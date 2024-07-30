@@ -1,28 +1,19 @@
 body {
     margin: 0;
     padding: 20px;
-    background-color: #818479;
-    color: #E4E9B2;
+    background-color: #B5CBB7;
+    color: #E7E08B;
     font-family: "Roboto", sans-serif;
 }
 
 button {
     width: 50px;
     height: 50px;
-    color: #B5CBB7;
+    color: #D2E4C4;
     background-color: transparent;
     border-radius: 10px;
-    border-color: #B5CBB7;
-    border: solid;
-}
-
-#equal-button {
     border-color: #D2E4C4;
-    color: #B5CBB7;
-}
-
-.title-color {
-    color: #E7E08B;
+    border: solid;
 }
 
 .flex-container {
@@ -50,12 +41,20 @@ button {
     justify-content: space-between;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .gap-10 {
     gap: 10px;
 }
 
 .w-230 {
     width: 230px;
+}
+
+.w-250 {
+    width: 250px;
 }
 
 #operation-text {
@@ -69,7 +68,22 @@ button {
     border-radius: 10px;
 }
 
+.calculator {
+    border-radius: 10px;
+    background-color: #818479;
+}
+
+.title-text {
+    color: #818479;
+}
+
+
 .px-10 {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.py-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
