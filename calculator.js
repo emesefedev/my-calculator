@@ -49,12 +49,14 @@ let resultShowed = false
 
 function getResult() {
     const input = operationText.textContent.split(" ")
+    
     if (!isValidInput(input)) {
         displayError()
         return
     }
 
-    const result = operate(+input[0], +input[2], input[1])
+    const [operand1, operation, operand2] = input
+    const result = operate(+operand1, +operand2, operation)
     if (result == null) {
         displayError()
         return
